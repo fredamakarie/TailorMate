@@ -3,7 +3,10 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-        <p>Made by Makarie Studios</p>
+      <div className='footer'>
+        <p className='text-amber-50'>Made by Makarie Studios</p>
+      </div>
+        
     </>
   )
 }
