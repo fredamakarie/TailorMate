@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j!8qzr7mb-^88f9)^a^9_*)vzf&o5r-6b-d!i$=&$2z%t*qxs%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1","localhost"]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'tailors',
     'customer_mgt',
 
@@ -79,11 +80,28 @@ WSGI_APPLICATION = 'tailormate_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+      'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+  }
 }
 
+#from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+#BASE_DIR = Path(__file__).resolve().parent.parent
+#load_dotenv(BASE_DIR / '.env')
+'''
+DATABASES = {
+    'analytics': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+    }
+}'''
 
 
 
