@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from "../assets/Logo.png"
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, Routes, Route } from 'react-router-dom'
+import SignupPage from './signuppage'
+import Login from './login'
 
 const LandingPage = () => {
   return (
@@ -11,11 +13,13 @@ const LandingPage = () => {
             </div>
             <div className='login_section'>
               <NavLink to= "/signup"><button>Get Started</button></NavLink>
+              <Outlet/>
               <NavLink to= "/login">Already have an account, please log in</NavLink>
+              <Outlet/>
+        
             </div>
         </div>
-        <Outlet/>
-        <Outlet/>
+       
     </>
   )
 }
