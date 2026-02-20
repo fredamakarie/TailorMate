@@ -15,3 +15,4 @@ class Measurement(models.Model):
     hips = models.CharField(max_length=20)
     shoulder_length = models.CharField(max_length=20)
     sleeve_length = models.CharField(max_length=20)
+    full_dress_length = models.CharField(max_length=20)
